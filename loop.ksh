@@ -1,4 +1,9 @@
-git for-each-ref \
-	--format="delete %(refname)" refs/original | git update-ref --stdin
-$ git reflog expire --expire=now --all
-$ git gc --prune=now
+
+git filter-branch \
+--force \
+--prune-empty \
+--index-filter \
+"git rm --cached --ignore-unmatch passwords.txt" \
+--tag-name-filter cat -- --all
+
+
