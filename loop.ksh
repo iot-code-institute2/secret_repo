@@ -1,3 +1,4 @@
+#!/usr/bin/sh --debug
 
 git filter-branch \
 --force \
